@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>POURCENT: A Coding Project By Mathieu Developer</title>
+    <title>PALINDROME: A Coding Project By Mathieu Developer</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,7 +22,7 @@
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><img src="img/MDfull.png" height="30"
-                    class="d-inline-block align-text-top"> POURCENT</a>
+                    class="d-inline-block align-text-top"> PALINDROME</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -51,7 +51,28 @@
 
     <!-- ----Main Section ---- -->
     <main class="flex-shrink-0">
-        <div class="container">
+        <div class="container mt-5">
+            <div class="row rows-cols-1 rows-cols-lg-2">
+                <div class="col-12 col-lg-6">
+                    <h1 class="display-5 fw-bold lh-1 mb-3">PALINDROME</h1>
+                    <h4 class="lead">Un exercice de programmation en javascript. Le palindrome est un mot ou groupe de mots qui peut se lire de gauche à droite ou de droite à gauche.Tapez du texte, le programme vérifie s'il s'agit d'un palindrome.</h4>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h5 class="border-bottom border-1 border-danger">Entrer le texte à verifier</h5>
+                    <form class="row gx-3 gy-2">
+                        <div class="col">
+                            <input type="text" id="userString" class="form-control" aria-label="User String">
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-danger" type="button" id="btnSubmit">PALINDROME ?</button>
+                        </div>
+                        <div class="alert alert-danger mt-5 invisible fade show" id="alert" role="alert">
+                            <h4 class="alert-heading">Well done</h4><hr>
+                            <p class="mb-0" id="msg">Your strng reversed is :</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </main>
  <!-- ----Footer Section ---- -->
