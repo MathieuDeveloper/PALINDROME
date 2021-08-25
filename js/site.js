@@ -10,7 +10,7 @@ function getValue() {
 }
 
 
-//logic function
+//logic function 1
 // char code START 97 to 122 + 224 to 239 + 242 to 246 + 248 to 255 END
 function palindromeWell(userValue) {
     let userStringWell = [];
@@ -26,7 +26,8 @@ function palindromeWell(userValue) {
 
     return userStringWell;
 }
-
+//logic function 2
+// char code START 97 to 122 + 224 to 239 + 242 to 246 + 248 to 255 END
 function palindromeReverse(userValue) {
     let userStringReversed = [];
     let userValueB = userValue.toLowerCase().trim();
