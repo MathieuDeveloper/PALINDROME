@@ -49,12 +49,12 @@ function displayPalindrome(userStringWell, userStringReversed) {
         document.getElementById("alert").classList.remove("invisible");
         document.getElementById("alert").classList.remove("alert-danger");
         document.getElementById("alert").classList.add("alert-succes");
-        document.getElementById("msg").innerHTML = `Your phrase ${userStringReversed} is a palindrome`;
+        document.getElementById("msg").innerHTML = `Votre phrase ${userStringReversed} est un palindrome`;
     } else {
         document.getElementById("alert").classList.remove("invisible");
         document.getElementById("alert").classList.remove("alert-succes");
         document.getElementById("alert").classList.add("alert-danger");
-        document.getElementById("msg").innerHTML = `${userStringWell} is NOT a palindrome`;
+        document.getElementById("msg").innerHTML = `${userStringWell} n'est pas un palindrome`;
 
     }
 }
