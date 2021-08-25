@@ -3,7 +3,7 @@ function getValue() {
     let userStringWell = [];
     let userStringReversed = [];
     let userValue = document.getElementById("userString").value;
-    userStringWell = palindromeTrim(userValue);
+    userStringWell = palindromeWell(userValue);
     userStringReversed = palindromeReverse(userValue);
     displayPalindrome(userStringWell, userStringReversed);
 
@@ -12,7 +12,7 @@ function getValue() {
 
 //logic function
 // char code START 97 to 122 + 224 to 239 + 242 to 246 + 248 to 255 END
-function palindromeTrim(userValue) {
+function palindromeWell(userValue) {
     let userStringWell = [];
     let userValueB = userValue.toLowerCase().trim();
     for (let i = 0; i < userValueB.length; i++) {
