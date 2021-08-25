@@ -1,28 +1,60 @@
 //get value
 function getValue() {
-    alert("start");
+    let userStringWell = [];
+    let userStringReversed = [];
     let userValue = document.getElementById("userString").value;
-    alert(userValue.charCodeAt(0));
-    palindrome(userValue);
+    userStringWell = palindromeTrim(userValue);
+    userStringReversed = palindromeReverse(userValue);
+    displayPalindrome(userStringWell, userStringReversed);
 
-    alert(userValue);
 }
 
 
 //logic function
 // char code START 97 to 122 + 224 to 239 + 242 to 246 + 248 to 255 END
-function palindrome(userValue) {
-    let vNoStrange = [];
-    
+function palindromeTrim(userValue) {
+    let userStringWell = [];
     let userValueB = userValue.toLowerCase().trim();
-    alert(userValueB + " ok");
     for (let i = 0; i < userValueB.length; i++) {
-        
-        alert(userValueB + " ok2");
-     let valueCharCode = userValueB.charCodeAt(0);
-     alert(valueCharCode);
-     
- }
-   
-               
+        if (97 <= userValueB.charCodeAt(i) && userValueB.charCodeAt(i) <= 122 ||
+            224 <= userValueB.charCodeAt(i) && userValueB.charCodeAt(i) <= 239 ||
+            242 <= userValueB.charCodeAt(i) && userValueB.charCodeAt(i) <= 246 ||
+            248 <= userValueB.charCodeAt(i) && userValueB.charCodeAt(i) <= 255) {
+            userStringWell += (userValueB[i]);
+        } // outside the if
+    } // outside the for
+
+    return userStringWell;
+}
+
+function palindromeReverse(userValue) {
+    let userStringReversed = [];
+    let userValueB = userValue.toLowerCase().trim();
+    for (let i = userValueB.length - 1; i >= 0; i--) {
+        if (97 <= userValueB.charCodeAt(i) && userValueB.charCodeAt(i) <= 122 ||
+            224 <= userValueB.charCodeAt(i) && userValueB.charCodeAt(i) <= 239 ||
+            242 <= userValueB.charCodeAt(i) && userValueB.charCodeAt(i) <= 246 ||
+            248 <= userValueB.charCodeAt(i) && userValueB.charCodeAt(i) <= 255) {
+            userStringReversed += (userValueB[i]);
+        } // outside the if
+    } // outside the for
+
+    return userStringReversed;
+
+}
+
+function displayPalindrome(userStringWell, userStringReversed) {
+
+    if (userStringWell == userStringReversed) {
+        document.getElementById("alert").classList.remove("invisible");
+        document.getElementById("alert").classList.remove("alert-danger");
+        document.getElementById("alert").classList.add("alert-succes");
+        document.getElementById("msg").innerHTML = `Your phrase ${userStringReversed} is a palindrome`;
+    } else {
+        document.getElementById("alert").classList.remove("invisible");
+        document.getElementById("alert").classList.remove("alert-succes");
+        document.getElementById("alert").classList.add("alert-danger");
+        document.getElementById("msg").innerHTML = `${userStringWell} is NOT a palindrome`;
+
     }
+}
