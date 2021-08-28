@@ -60,17 +60,54 @@
 
                 <div class="col-lg-8">
                     <pre class="line-numbers"><code class="language-javascript">
-                        //Call Hello World
-                        function helloWorld() {
-                             alert("Hello World !");
+                        function getValue() {
+                            document.getElementById("alert").classList.add("invisible");
+                            let userString = document.getElementById("userString").value;
+                            let returnObj = palindrome(userString);
+                            displayPalindrome(returnObj);
+                        }
+                        
+                        function palindrome(userString) {
+                            userString = userString.toLowerCase();
+                            let reverseString = [];
+                            let regex = /[^a-z0-9àâçéèêëîï]/gi;
+                            let returnObj = {};
+                            userString = userString.replace(regex,"");
+                            
+                            for (let index = userString.length-1; index >=0; index--) {
+                                reverseString += userString[index];
+                                
+                            }
+                                                    
+                            if (userString == reverseString) {
+                                returnObj.msg = `Super, ${userString} est un palindrome !`;
+                            } else {
+                                returnObj.msg = `${userString} n'est pas un palindrome.`;
+                            }
+                        
+                            return returnObj;
+                        }
+                        
+                        function displayPalindrome(returnObj) {
+                            document.getElementById("alert").classList.remove("invisible");
+                            document.getElementById("msg").innerHTML = returnObj.msg;
                         }
                 </code>
             </pre>
                 </div>
                 <div class="col-lg-4">
-                    <p>The code is structured in one function.</p>
-                    <h5>Hello World !</h5>
-                    <p>Hello Wolrd is a functon that displays an alert with the message Hello World !</p>
+                    <p>Le code est structuré en 3 fonctions.</p>
+                    <h5>1) getValue()</h5>
+                    <p>Récupère la phrase de l'utilisateur.<br>
+                    Appelle les autres fonctions.</p>
+                    <h5>2) palindrome()</h5>
+                    <p>Met en minuscule le texte de l'utilisateur.<br>
+                    Supprime les espaces et les caractères non souhaités avec RegExp l'expression rationnelle appellée regex.<br>
+                Inverse le texte de l'utilisateur avec une boucle.<br>
+            Retourne le texte à afficher à l'aide d'un objet returnObj via un string template.</p>
+                    <h5>3) displayPalindrome()</h5>
+                    <p>Rend visible le message à afficher.<br>
+                    Insère le texte à l'aide de l'objet returnObj et de son string template.</p>
                 </div>
             </div>
         </div>
